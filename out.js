@@ -1,13 +1,12 @@
 const figlet = require('figlet');
 const chalk = require('chalk');
 
-
 /**
- * Dar color a un string.
+ * Dar un color a un string
  *
- * @param msg    Es string al que hay que dar color.
- * @param color  El color con el que pintar msg.
- * @returns {string} Devuelve el string msg con el color indicado.
+ * @param msg Es string al que hay que dar color.
+ * @param color El color con el que pintar msg.
+ * @return {string} Devuelve el string msg con el color indicado
  */
 const colorize = (msg, color) => {
 
@@ -17,41 +16,38 @@ const colorize = (msg, color) => {
     return msg;
 };
 
-
 /**
  * Escribe un mensaje de log.
- *
- * @param msg  El String a escribir
- * @param color  Color del texto.
+ * @param msg El String a escribir
+ * @param color Color del texto
  */
+
 const log = (msg, color) => {
 
     console.log(colorize(msg, color));
 };
 
-
 /**
  * Escribe un mensaje de log grande.
- *
- * @param msg    Texto a escribir.
- * @param color  Color del texto.
+ * @param msg El texto a escribir.
+ * @param color Color del texto.
  */
+
 const biglog = (msg, color) => {
 
-    log(figlet.textSync(msg, { horizontalLayout: 'full' }), color);
+    log(figlet.textSync(msg, { horizontalLayout: 'full'}), color);
 };
 
 
 /**
- * Escribe el mensaje de error emsg.
- *
- * @param emsg Texto del mensaje de error.
+ * Escribe un mensaje de error emsg
+ * @param emsg Texto del mensaje error.
  */
+
 const errorlog = (emsg) => {
 
-    console.log(`${colorize("Error", "red")}: ${colorize(colorize(emsg, "red"), "bgYellowBright")}`);
+    console.log(`${colorize("Error", "red")}: ${colorize(colorize(emsg, "red"),"bgYellowBright")}`);
 };
-
 
 exports = module.exports = {
     colorize,
